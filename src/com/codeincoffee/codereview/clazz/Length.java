@@ -13,8 +13,7 @@ public class Length extends BaseReview implements Reviewable {
 
 	public Result review(Class<?> clazz, int limit) {
 		SourceFile file = new SourceFile(clazz);
-		ResultModule resultModule = new ResultModule(file, file.lineNumber(), limit);
-		return getResult(resultModule);
+		return getResult(file, file.lineNumber(), limit);
 	}
 	
 }

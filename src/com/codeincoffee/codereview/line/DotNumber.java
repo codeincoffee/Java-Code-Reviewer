@@ -26,7 +26,7 @@ public class DotNumber extends BaseReview implements Reviewable {
 		for (Line line : fileMethod.compiled()) {
 			int dotNumber = line.count(".");
 			if (dotNumber > limit)
-				return getResult(new ResultModule(line, dotNumber, limit));
+				return getResult(line, dotNumber, limit);
 		}
 		return Result.getSuccess(getName());
 	} 

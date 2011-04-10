@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
+<!-- some comments here for xml tag, active means this review is open or not, 
+     limit is the upbound of the specificated review -->
+
+<!-- when you set the limit of com.codeincoffee.codereview.clazz.Length to 250, and active it,
+     you will fail in this review if your class's source file is longer than 250 -->
+
 <reviews>
 
 	<!-- class level -->

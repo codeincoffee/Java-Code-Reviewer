@@ -19,7 +19,6 @@ public class GetterSetter extends BaseReview implements Reviewable {
 		for (FileMethod fileMethod : FileMethodUtil.fileMethods(clazz))
 			if (isGetterOrSetter(fileMethod, clazz))
 				result++;
-		System.out.println(result);
 		return getResult(new Reflector(clazz), result, limit);
 	}
 

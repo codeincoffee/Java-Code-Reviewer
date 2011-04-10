@@ -16,7 +16,7 @@ public class ElseNumber extends BaseReview implements Reviewable {
 	public Result review(Class<?> clazz, int limit) {
 		for (FileMethod fileMethod : FileMethodUtil.fileMethods(clazz)) {
 			int elseNumber = elseNumber(fileMethod);
-			Result result = getResult(new ResultModule(fileMethod, elseNumber, limit));
+			Result result = getResult(fileMethod, elseNumber, limit);
 			if (result.failed()) return result;
 		}
 		return Result.getSuccess(getName());

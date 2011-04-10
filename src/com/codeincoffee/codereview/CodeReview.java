@@ -17,6 +17,11 @@ public class CodeReview {
 	
 	private CodeReview() {}
 	
+    /**
+     * @param root set the project root, default root is  "src"
+     * @param successLopOPen whether print log in console in every success review, default false
+     * @param failLogOpen whether print log in console if review fail, default true
+     */
 	public static CodeReview getInstance(String root, boolean successLogOpen, boolean failLogOpen) {
 		Config.SUCCESS_LOG_OPEN = successLogOpen;
 		Config.FAIL_LOG_OPEN = failLogOpen;
@@ -24,17 +29,28 @@ public class CodeReview {
 		return getInstance();
 	}
 	
+    /**
+     * @param successLopOPen whether print log in console in every success review, default false
+     * @param failLogOpen whether print log in console if review fail, default true
+     */
 	public static CodeReview getInstance(boolean successLogOpen, boolean failLogOpen) {
 		Config.SUCCESS_LOG_OPEN = successLogOpen;
 		Config.FAIL_LOG_OPEN = failLogOpen;
 		return getInstance();
 	}
 	
+    /**
+     * @root the project root, default "src"
+     * get a instance of CodeReview with project root setting
+     */
 	public static CodeReview getInstance(String root) {
 		Config.root = root;
 		return getInstance();
 	}
 	
+    /**
+     * get an instance of CodeReview if project root is "src"
+     */
 	public static CodeReview getInstance() {
 		if (instance == null) {
 			instance = new CodeReview();
@@ -42,13 +58,32 @@ public class CodeReview {
 		}
 		return instance;
 	}
-	
-	public static void review(String filePath) {
+    
+    /**
+     * @param clazz
+     * the clazz which you want to review, quite useful if you are a TDDer
+     */
+    public static void review(Class<?> clazz) {
+    	review(getReviewers(), clazz);
+	}
+    
+	/** 
+     * @param filePath 
+     * the filePath shoud be project relative path
+     * e.g. src/com/codeincoffee/codeview/CodeReview.java
+     */
+    public static void review(String filePath) {
 		Class<?> clazz = FileUtil.getClassByFile(new File(filePath));
 		review(getReviewers(), clazz);
 	}
-
-	public static void review(Class<?> clazz) {
+    
+    /** 
+     * @param file 
+     * the file shoud be project relative path
+     * e.g. new File(src/com/codeincoffee/codeview/CodeReview.java)
+     */
+    public static void review(File file) {
+		Class<?> clazz = FileUtil.getClassByFile(file);
 		review(getReviewers(), clazz);
 	}
 	
@@ -63,11 +98,6 @@ public class CodeReview {
 			if (review.reviewFail(clazz)) 
 				return;
 		}
-	}
-
-	public static void review(File directory) {
-		if (!directory.isDirectory())
-			throw new IllegalArgumentException("this is not a directory");
 	}
 
 }

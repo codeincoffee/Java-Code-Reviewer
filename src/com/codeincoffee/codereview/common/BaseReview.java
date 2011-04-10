@@ -12,7 +12,7 @@ public class BaseReview {
 
 
 	public Result getResult(Module module, int result, int limit) {
-        ResultModule module = new ResultModule(module, result, limit);
+        ResultModule resultModule = new ResultModule(module, result, limit);
         if (resultModule.fail())
 		    return Result.getFail(getName(), resultModule);
 		return Result.getSuccess(getName());

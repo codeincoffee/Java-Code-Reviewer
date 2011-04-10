@@ -13,8 +13,7 @@ public class FieldNumber extends BaseReview implements Reviewable {
 
 	public Result review(Class<?> clazz, int limit) {
 		Reflector reflector = new Reflector(clazz);
-		ResultModule resultModule = new ResultModule(reflector, reflector.fieldSize(), limit);
-		return getResult(resultModule);
+		return getResult(reflector, reflector.fieldSize(), limit);
 	}
 
 }

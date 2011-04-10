@@ -3,7 +3,6 @@ package com.codeincoffee.codereview.line;
 import com.codeincoffee.codereview.common.BaseReview;
 import com.codeincoffee.codereview.common.Line;
 import com.codeincoffee.codereview.common.Result;
-import com.codeincoffee.codereview.common.ResultModule;
 import com.codeincoffee.codereview.common.Reviewable;
 import com.codeincoffee.codereview.common.SourceFile;
 

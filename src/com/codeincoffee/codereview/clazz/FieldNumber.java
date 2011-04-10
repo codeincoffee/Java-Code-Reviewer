@@ -3,7 +3,6 @@ package com.codeincoffee.codereview.clazz;
 import com.codeincoffee.codereview.common.BaseReview;
 import com.codeincoffee.codereview.common.Reflector;
 import com.codeincoffee.codereview.common.Result;
-import com.codeincoffee.codereview.common.ResultModule;
 import com.codeincoffee.codereview.common.Reviewable;
 
 /**

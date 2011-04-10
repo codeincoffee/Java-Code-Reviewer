@@ -10,7 +10,6 @@ public class BaseReview {
 		return paths[paths.length-2] + FileUtil.DOT + paths[paths.length-1];
 	}
 
-
 	public Result getResult(Module module, int result, int limit) {
         ResultModule resultModule = new ResultModule(module, result, limit);
         if (resultModule.fail())

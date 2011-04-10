@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<reviews>
+
+	<!-- class level -->
+	<review reviewable="com.codeincoffee.codereview.clazz.Length" active="true" limit="250" />
+	<review reviewable="com.codeincoffee.codereview.clazz.FieldNumber" active="true" limit="3" />
+	<review reviewable="com.codeincoffee.codereview.clazz.GetterSetter" active="true" limit="0" />
+	<review reviewable="com.codeincoffee.codereview.clazz.PublicParameterBoolean" active="true" limit="0" />
+
+	<!-- method level -->
+	<review reviewable="com.codeincoffee.codereview.method.Length" active="true" limit="7" />
+	<review reviewable="com.codeincoffee.codereview.method.ElseNumber" active="true" limit="0" />
+	<review reviewable="com.codeincoffee.codereview.method.Invendation" active="true" limit="1" />
+
+	<!-- line level -->
+	<review reviewable="com.codeincoffee.codereview.line.DotNumber" active="true" limit="2" />
+	<review reviewable="com.codeincoffee.codereview.line.Length" active="true" limit="80" />
+	
+</reviews>
